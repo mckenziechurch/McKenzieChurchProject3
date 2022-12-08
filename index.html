@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>McKenzie Church - Project 3</title>
+    </head>
+    <body>
+        <h1>Fraudulent Transaction Prediction - Is This Transaction Fraud?</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="Type" placeholder="Transaction Type" required="required">
+            <input type="text" name="Amount" placeholder="Transaction Amount" required="required">
+            <input type="text" name="oldbalanceOrg" placeholder="Transaction: Original Account Old Balance" required="required">
+            <input type="text" name="newbalanceOrig" placeholder="Transaction: Original Account New Balance" required="required">
+            <input type="text" name="oldbalanceDest" placeholder="Transaction: Destination Account Old Balance" required="required">
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        <h2>This transaction is: {{predicted_text}}</h2>
+    </body>
+</html>
